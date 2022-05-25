@@ -3,14 +3,14 @@ import React from 'react';
 
 export default function Home() {
   // === CLOUDINARY MEDIA ===
-  // Get images from Cloudinary
+  // Get images from Cloudinary with Gatsby's useStaticQuery hook
   const data = useStaticQuery(graphql`
     query CloudinaryImages {
       allCloudinaryMedia {
         edges {
           node {
-            secure_url
             public_id
+            secure_url
           }
         }
       }
