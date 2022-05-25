@@ -53,7 +53,12 @@ export default function Home() {
       <section style={{ display: 'grid', gap: '2rem' }}>
         {imagesList &&
           imagesList.map((imageNode, index) => (
-            <Image key={`${index}-cld`} image={imageNode} />
+            <Image
+              key={`${index}-cld`}
+              image={imageNode}
+              isLast={index === imagesList.length - 1}
+              newLimit={newLimit}
+            />
           ))}
       </section>
     </div>
